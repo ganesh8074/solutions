@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Halloween Sale</title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import math
+  import os
+  import random
+  import re
+  import sys
+
+  def how_many_games(p, d, m, s):
+      res = 0
+
+      while s > 0:
+          res += 1
+          s -= p
+          p = max(p - d, m)
+
+      if s != 0:
+          res -= 1
+
+      return res
+
+  if __name__ == '__main__':
+      fptr = open(os.environ['OUTPUT_PATH'], 'w')
+      p, d, m, s = [int(n) for n in input().split(" ")]
+
+      answer = how_many_games(p, d, m, s)
+
+      fptr.write(str(answer) + '\n')
+      fptr.close()
+</pre>
+    </div>
+  </body>
+</html>

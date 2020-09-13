@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Day of the Programmer</title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import sys
+
+  def is_leap_greg(year):
+      return (year % 400 == 0) or ((year % 4 == 0) and (year % 100 != 0))
+
+  def is_leap_jul(year):
+      return year % 4 == 0
+
+  def solve(year):
+      target = 256
+      months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+      if year < 1918:
+          if is_leap_jul(year):
+              months[1] = 29
+      elif year > 1919:
+          if is_leap_greg(year):
+              months[1] = 29
+      elif year == 1918:
+          target += 13
+
+      sum_tmp = 0
+      for ind, el in enumerate(months):
+          if sum_tmp + el > target:
+              month = '0' + str(ind + 1)
+              day = target - sum_tmp
+              break
+          else:
+              sum_tmp += el
+
+      return ".".join([str(day), str(month), str(year)])
+
+  year = int(input().strip())
+  result = solve(year)
+  print(result)
+</pre>
+    </div>
+  </body>
+</html>

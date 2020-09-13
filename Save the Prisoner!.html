@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Save the Prisoner!</title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import sys
+  def saveThePrisoner(n, m, s):
+      res = (s + m-1) % n
+      return res if res != 0 else n
+
+  t = int(input().strip())
+  for a0 in range(t):
+      n, m, s = input().strip().split(' ')
+      n, m, s = [int(n), int(m), int(s)]
+      result = saveThePrisoner(n, m, s)
+      print(result)
+</pre>
+    </div>
+  </body>
+</html>

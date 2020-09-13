@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cut the Sticks</title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  using namespace std;
+
+int main()
+{
+int total_sticks;
+cin>>total_sticks;
+
+int temp;
+vector <int> stick_length;
+for(int input_index=0;input_index<total_sticks;input_index++)
+    {
+    cin>>temp;
+    stick_length.push_back(temp);
+    }
+
+sort(stick_length.begin(),stick_length.end());
+
+int shortest_stick, zero_counter=0;
+int result_counter=total_sticks;
+
+for(int out_index=0;out_index< total_sticks;out_index++)
+    {
+    int sticks_cut=result_counter-zero_counter;
+    if(sticks_cut==0) {break;}
+
+    for(int minimum_finder=0;minimum_finder< total_sticks;minimum_finder++)
+        {
+        if(stick_length[minimum_finder]>0) {shortest_stick=stick_length[minimum_finder]; break;}
+        }
+
+    cout<< sticks_cut<< endl;
+
+    for(int subtract_index=0;subtract_index< total_sticks;subtract_index++)
+        {
+        stick_length[subtract_index]-=shortest_stick;
+        if(stick_length[subtract_index]==0) {zero_counter++;}
+        }
+    }
+return 0;
+}
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import sys
+
+  def cutTheSticks(arr):
+      out = []
+      while arr:
+          out.append(len(arr))
+          arr_min = min(arr)
+          arr = list(map(lambda x: x - arr_min, arr))
+          arr = list(filter(lambda x: x > 0, arr))
+
+      return out
+
+  if __name__ == "__main__":
+      n = int(input().strip())
+      arr = list(map(int, input().strip().split(' ')))
+      result = cutTheSticks(arr)
+      print ("\n".join(map(str, result)))
+</pre>
+    </div>
+  </body>
+</html>

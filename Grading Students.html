@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grading Students</title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import sys
+
+  def solve(grades):
+      res = []
+
+      for el in grades:
+          if el < 38:
+              res.append(el)
+          elif el%5 >= 3:
+              res.append(el + 5-el%5)
+          else:
+              res.append(el)
+      return res
+
+  n = int(input().strip())
+  grades = []
+  grades_i = 0
+  for grades_i in range(n):
+     grades_t = int(input().strip())
+     grades.append(grades_t)
+  result = solve(grades)
+  print ("\n".join(map(str, result)))
+</pre>
+    </div>
+  </body>
+</html>

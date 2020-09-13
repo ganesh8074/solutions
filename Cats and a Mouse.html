@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cats and a Mouse</title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import sys
+
+  def catAndMouse(x, y, z):
+      cat_a = abs(x - z)
+      cat_b = abs(y - z)
+
+      if cat_a < cat_b:
+          return "Cat A"
+      elif cat_a > cat_b:
+          return "Cat B"
+      else:
+          return "Mouse C"
+
+  if __name__ == "__main__":
+      q = int(input().strip())
+      for a0 in range(q):
+          x, y, z = input().strip().split(' ')
+          x, y, z = [int(x), int(y), int(z)]
+          result = catAndMouse(x, y, z)
+          print ("".join(map(str, result)))
+</pre>
+    </div>
+  </body>
+</html>

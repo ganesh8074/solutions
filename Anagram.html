@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Alternating Characters </title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/usr/bin/py
+
+def buildMap(s):
+    the_map = {}
+    for char in s:
+        if char not in the_map:
+            the_map[char] = 1
+        else:
+            the_map[char] +=1
+
+    return the_map
+
+
+def anagram(s):
+    if len(s)%2 == 1:
+        return -1
+
+    mid = len(s)//2
+    s1 = s[:mid]
+    s2 = s[mid:]
+
+    map1 = buildMap(s1)
+    map2 = buildMap(s2)
+
+    diff_cnt = 0
+    for key in map2.keys():
+        if key not in map1:
+            diff_cnt += map2[key]
+        else:
+            diff_cnt += max(0, map2[key]-map1[key])
+
+    return diff_cnt
+
+if __name__ == '__main__':
+    t = input()
+    for _ in xrange(t):
+        s = raw_input()
+        print anagram(s)
+
+</pre>
+    </div>
+  </body>
+</html>

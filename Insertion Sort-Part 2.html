@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="common.css">
+  </head>
+  <body>
+    <div class="box1">
+      <h2>Solution:</h2>
+      <p>For Recent Updated Code   <a href="https://github.com/ganesh8074/Hackerrank-Cpp-Solutions">VISIT MY GITHUB</a></p>
+
+      <h3>C++:</h3>
+<pre>
+  </pre>
+
+      <h3>Python:</h3>
+<pre>
+  #!/bin/python3
+
+  import sys
+
+  def insertionSort1(start, arr):
+      probe = arr[start]
+
+      for ind in range(start-1, -1, -1):
+          if arr[ind] > probe:
+              arr[ind+1] = arr[ind]
+          else:
+              arr[ind+1] = probe
+              break
+      if arr[0] > probe:
+          arr[0] = probe
+
+  def insertionSort2(n, arr):
+      for ind in range(1, len(arr)):
+          insertionSort1(ind, arr)
+          print(" ".join(map(str, arr)))
+
+  if __name__ == "__main__":
+      n = int(input().strip())
+      arr = list(map(int, input().strip().split(' ')))
+      insertionSort2(n, arr)
+</pre>
+    </div>
+  </body>
+</html>
